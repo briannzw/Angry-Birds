@@ -13,8 +13,9 @@ Sebuah repository untuk assignment project "Angry Birds" dari [DILo Game Academy
 Dikembangkan oleh Brian Wijaya.
 
 ## Screenshots
-![alt text](https://github.com/briannzw/github-magnetize/blob/master/Screenshots/Screenshot%201.png "Screenshot 1")
-![alt text](https://github.com/briannzw/github-magnetize/blob/master/Screenshots/Screenshot%202.png "Screenshot 2")
+![alt text](https://github.com/briannzw/Angry-Birds/blob/master/Screenshots/Screenshot%201.png "Screenshot 1")
+![alt text](https://github.com/briannzw/Angry-Birds/blob/master/Screenshots/Screenshot%202.png "Screenshot 2")
+![alt text](https://github.com/briannzw/Angry-Birds/blob/master/Screenshots/Screenshot%203.png "Screenshot 3")
 	
 ## Technologies
 Project is created with:
