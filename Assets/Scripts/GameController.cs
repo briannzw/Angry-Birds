@@ -13,9 +13,13 @@ public class GameController : MonoBehaviour
     public BoxCollider2D tapCollider;
 
     private bool _isGameEnded = false;
+    public Canvas UICanvas;
+    private UIController UIControl;
 
     private void Start()
     {
+        UIControl = UICanvas.GetComponent<UIController>();
+
         for(int i = 0; i < Birds.Count; i++)
         {
             Birds[i].OnBirdDestroyed += ChangeBird;
@@ -36,9 +40,14 @@ public class GameController : MonoBehaviour
     {
         if (_isGameEnded) return;
 
-        if(tapCollider != null) tapCollider.enabled = false;
-
         Birds.RemoveAt(0);
+        if (Birds.Count <= 0 && Enemies.Count > 0)
+        {
+            Debug.Log("Game over.");
+            UIControl.EndGame("LEVEL FAILED", false);
+        }
+
+        if(tapCollider != null) tapCollider.enabled = false;
 
         if(Birds.Count > 0)
         {
@@ -61,6 +70,8 @@ public class GameController : MonoBehaviour
         if(Enemies.Count <= 0)
         {
             _isGameEnded = true;
+            Debug.Log("Game end.");
+            UIControl.EndGame("LEVEL CLEARED", true);
         }
     }
 
@@ -71,7 +82,7 @@ public class GameController : MonoBehaviour
         tapCollider.enabled = true;
     }
 
-    private void OnMouseUp()
+    private void OnMouseDown()
     {
         if(_shotBird != null)
         {
